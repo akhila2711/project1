@@ -1,0 +1,13 @@
+.report-bg {
+  background: #f5f6fa;
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+.report-paper {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px 32px 32px 32px;
+  border-radius: 18px;
+  background: #fff;
+}

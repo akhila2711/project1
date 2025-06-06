@@ -1,0 +1,74 @@
+/* body {
+background: linear-gradient(135deg, #e0f7fa 0%, #ffe0b2 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url('https://www.transparenttextures.com/patterns/white-paper-fibers.png');
+ 
+  
+}
+
+.form-container {
+  background: #fff;
+  padding: 40px 32px 32px 32px;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.15);
+  width: 100%;
+  max-width: 400px;
+  margin: 100px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.MuiTypography-root {
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+
+.MuiTextField-root {
+  margin-bottom: 18px !important;
+}
+
+.MuiButton-contained {
+  background: linear-gradient(90deg, #ff6600 0%, #ffb347 100%);
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 0;
+  border-radius: 6px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: background 0.3s;
+}
+
+.MuiButton-contained:hover {
+  background: linear-gradient(90deg, #ff8c1a 0%, #ffd580 100%);
+}
+
+.MuiFormControlLabel-root {
+  align-self: flex-start;
+  margin-bottom: 10px;
+}
+
+.login-links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.login-links a {
+  color: #ff6600;
+  text-decoration: none;
+  font-size: 0.98rem;
+  text-align: center;
+  transition: color 0.2s;
+}
+
+.login-links a:hover {
+  color: #e65c00;
+  text-decoration: underline;
+} */

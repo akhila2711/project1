@@ -1,0 +1,96 @@
+/* .oversee-projects-container {
+  background: #f7f7f7;
+  min-height: 100vh;
+}
+.oversee-projects-content {
+  flex: 1;
+  padding: 40px 24px;
+  background: #f7f7f7;
+}
+.oversee-projects-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 28px;
+}
+.table-responsive {
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(44,62,80,0.08);
+  padding: 0;
+}
+.modern-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+  background: #fff;
+}
+.modern-table th, .modern-table td {
+  padding: 16px 12px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 1rem;
+}
+.modern-table th {
+  background: #f7f7f7;
+  color: #222;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.modern-table tr:last-child td {
+  border-bottom: none;
+}
+.status-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 16px;
+  font-size: 0.97em;
+  font-weight: 600;
+  background: #e3f2fd;
+  color: #2196f3;
+  text-transform: capitalize;
+}
+.status-badge.status-on-schedule {
+  background: #e3f2fd;
+  color: #2196f3;
+}
+.status-badge.status-delayed {
+  background: #ffebee;
+  color: #f44336;
+}
+.status-badge.status-ahead {
+  background: #e8f5e9;
+  color: #43a047;
+}
+.no-engineer {
+  color: #aaa;
+  font-style: italic;
+}
+.loader {
+  color: #2196f3;
+  font-size: 1.1rem;
+  margin: 32px 0;
+}
+.error-msg {
+  color: #f44336;
+  font-weight: 600;
+  margin: 32px 0;
+}
+@media (max-width: 900px) {
+  .modern-table, .table-responsive {
+    min-width: 600px;
+  }
+  .oversee-projects-content {
+    padding: 24px 4vw;
+  }
+}
+@media (max-width: 600px) {
+  .oversee-projects-content {
+    padding: 12px 2vw;
+  }
+  .modern-table th, .modern-table td {
+    padding: 10px 6px;
+    font-size: 0.97rem;
+  }
+} */

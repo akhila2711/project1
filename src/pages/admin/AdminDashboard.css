@@ -1,0 +1,226 @@
+.admin-dashboard-bg {
+  background: linear-gradient(120deg, #e3f0ff 0%, #f8fdff 100%);
+  min-height: 100vh;
+}
+
+.admin-dashboard-flex {
+  display: flex;
+  min-height: calc(100vh - 60px);
+}
+
+.admin-dashboard-content {
+  flex: 1;
+  padding: 40px 32px 32px 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.admin-dashboard-title {
+  font-weight: 800;
+  margin-bottom: 18px;
+  color: #1a365d;
+  letter-spacing: 0.5px;
+}
+
+.admin-dashboard-welcome-card {
+  margin-bottom: 32px;
+  border-radius: 16px !important;
+  background: rgba(255,255,255,0.92) !important;
+  box-shadow: 0 2px 12px rgba(44,62,80,0.07) !important;
+}
+
+.admin-dashboard-welcome {
+  font-size: 1.15rem;
+  color: #3a506b;
+  font-weight: 500;
+}
+
+/* Stat Cards - Bigger and Same Size */
+.admin-dashboard-cards {
+  margin-bottom: 36px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.stat-card {
+  border-radius: 28px !important;
+  color: #fff !important;
+  min-height: 220px !important;
+  height: 220px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.3rem !important;
+  box-shadow: 0 4px 24px rgba(44,62,80,0.13) !important;
+  transition: box-shadow 0.2s;
+}
+
+.stat-card:hover {
+  box-shadow: 0 8px 32px rgba(44,62,80,0.18) !important;
+}
+
+.stat-card.stat-blue {
+  background: linear-gradient(90deg, #1976d2 0%, #64b5f6 100%) !important;
+}
+.stat-card.stat-teal {
+  background: linear-gradient(90deg, #009688 0%, #4dd0e1 100%) !important;
+}
+.stat-card.stat-green {
+  background: linear-gradient(90deg, #388e3c 0%, #81c784 100%) !important;
+}
+.stat-card.stat-purple {
+  background: linear-gradient(90deg, #6a1b9a 0%, #ba68c8 100%) !important;
+}
+
+.stat-label {
+  font-weight: 600;
+  opacity: 0.93;
+  font-size: 1.35rem;
+}
+
+.stat-value {
+  font-weight: 800;
+  font-size: 3.2rem;
+  margin-top: 18px;
+}
+
+.admin-dashboard-divider {
+  margin: 36px 0 32px 0 !important;
+}
+
+/* Charts - Same Row, Full Width */
+.admin-dashboard-charts {
+  margin-bottom: 36px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  width: 100%;
+}
+
+.chart-paper {
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.09);
+  padding: 36px 48px 16px 48px;
+  flex: 1 1 0;
+  height: 520px;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart-title {
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #1a365d;
+  letter-spacing: 0.2px;
+  font-size: 1.35rem;
+}
+
+.recent-projects-box {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  padding: 28px 24px;
+  margin-top: 24px;
+}
+
+.recent-projects-title {
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #1a365d;
+}
+
+.recent-projects-table-wrapper {
+  overflow-x: auto;
+}
+
+.recent-projects-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.06);
+}
+
+.recent-projects-table th,
+.recent-projects-table td {
+  padding: 14px 10px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 1rem;
+}
+
+.recent-projects-table th {
+  background: #e3f0ff;
+  color: #1a365d;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.recent-projects-table tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 1200px) {
+  .admin-dashboard-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  .admin-dashboard-charts {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .chart-paper {
+    height: 400px;
+    padding: 24px 12vw 12px 12vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .admin-dashboard-content {
+    padding: 18px 4vw;
+  }
+  .admin-dashboard-cards {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .chart-paper {
+    height: 320px;
+    padding: 18px 4vw 12px 4vw;
+  }
+  .stat-card {
+    min-height: 140px !important;
+    height: 140px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-dashboard-content {
+    padding: 8px 2vw;
+  }
+  .admin-dashboard-title {
+    font-size: 1.3rem;
+  }
+  .recent-projects-title,
+  .chart-title {
+    font-size: 1.1rem;
+  }
+  .stat-card {
+    min-height: 100px !important;
+    height: 100px !important;
+    font-size: 1rem !important;
+  }
+  .admin-dashboard-charts {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .chart-paper {
+    height: 400px;
+    padding: 24px 12vw 12px 12vw;
+  }
+}

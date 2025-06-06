@@ -1,0 +1,24 @@
+.daily-log-bg {
+  background: #bec6e6;
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+.daily-log-card {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px 32px 32px 32px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.log-alert {
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.upload-btn {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}

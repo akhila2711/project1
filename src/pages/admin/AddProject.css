@@ -1,0 +1,65 @@
+.add-project-bg {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 48px 0;
+  background: transparent;
+}
+
+.add-project-paper {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(44, 62, 80, 0.09);
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(2px);
+}
+
+.add-project-title {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #222831;
+  letter-spacing: 0.5px;
+}
+
+.add-project-alert {
+  margin-bottom: 1.2rem;
+}
+
+.add-project-upload-btn {
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
+}
+
+.add-project-file-name {
+  margin-top: 0.5rem;
+}
+
+.add-project-image-preview-box {
+  margin-top: 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.add-project-image-preview {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.add-project-submit-btn {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+  font-weight: 600 !important;
+  font-size: 18px !important;
+}
+
+.add-project-uploaded-images {
+  margin-top: 2.5rem;
+}
