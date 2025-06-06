@@ -10,48 +10,27 @@
 
 .admin-dashboard-content {
   flex: 1;
-  padding: 40px 32px 32px 32px;
+  padding: 32px 18px 18px 18px;
   max-width: 1400px;
   margin: 0 auto;
 }
 
-.admin-dashboard-title {
-  font-weight: 800;
-  margin-bottom: 18px;
-  color: #1a365d;
-  letter-spacing: 0.5px;
-}
-
-.admin-dashboard-welcome-card {
-  margin-bottom: 32px;
-  border-radius: 16px !important;
-  background: rgba(255,255,255,0.92) !important;
-  box-shadow: 0 2px 12px rgba(44,62,80,0.07) !important;
-}
-
-.admin-dashboard-welcome {
-  font-size: 1.15rem;
-  color: #3a506b;
-  font-weight: 500;
-}
-
-/* Stat Cards - Bigger and Same Size */
 .admin-dashboard-cards {
-  margin-bottom: 36px;
+  margin-bottom: 28px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  gap: 28px;
 }
 
 .stat-card {
-  border-radius: 28px !important;
+  border-radius: 18px !important;
   color: #fff !important;
-  min-height: 220px !important;
-  height: 220px !important;
+  min-height: 120px !important;
+  height: 120px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  font-size: 1.3rem !important;
+  font-size: 1.1rem !important;
   box-shadow: 0 4px 24px rgba(44,62,80,0.13) !important;
   transition: box-shadow 0.2s;
 }
@@ -76,37 +55,37 @@
 .stat-label {
   font-weight: 600;
   opacity: 0.93;
-  font-size: 1.35rem;
+  font-size: 1.1rem;
 }
 
 .stat-value {
   font-weight: 800;
-  font-size: 3.2rem;
-  margin-top: 18px;
+  font-size: 2.2rem;
+  margin-top: 10px;
 }
 
 .admin-dashboard-divider {
-  margin: 36px 0 32px 0 !important;
+  margin: 28px 0 22px 0 !important;
 }
 
-/* Charts - Same Row, Full Width */
 .admin-dashboard-charts {
-  margin-bottom: 36px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-bottom: 28px;
   width: 100%;
+  justify-content: center;
 }
 
 .chart-paper {
   background: #fff;
-  border-radius: 22px;
+  border-radius: 14px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.09);
-  padding: 36px 48px 16px 48px;
-  flex: 1 1 0;
-  height: 520px;
-  width: 100%;
-  max-width: 100%;
+  padding: 24px 18px 10px 18px;
+  flex: 1 1 320px;
+  min-width: 320px;
+  max-width: 480px;
+  height: 340px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -115,23 +94,23 @@
 
 .chart-title {
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   color: #1a365d;
   letter-spacing: 0.2px;
-  font-size: 1.35rem;
+  font-size: 1.1rem;
 }
 
 .recent-projects-box {
   background: #fff;
-  border-radius: 18px;
+  border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  padding: 28px 24px;
-  margin-top: 24px;
+  padding: 18px 12px;
+  margin-top: 18px;
 }
 
 .recent-projects-title {
   font-weight: 700;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
   color: #1a365d;
 }
 
@@ -143,17 +122,17 @@
   width: 100%;
   border-collapse: collapse;
   background: #fff;
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(44, 62, 80, 0.06);
 }
 
 .recent-projects-table th,
 .recent-projects-table td {
-  padding: 14px 10px;
+  padding: 10px 8px;
   text-align: left;
   border-bottom: 1px solid #f0f0f0;
-  font-size: 1rem;
+  font-size: 0.98rem;
 }
 
 .recent-projects-table th {
@@ -172,55 +151,46 @@
     grid-template-columns: 1fr 1fr;
   }
   .admin-dashboard-charts {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  .chart-paper {
-    height: 400px;
-    padding: 24px 12vw 12px 12vw;
+    flex-direction: column;
+    gap: 24px;
   }
 }
 
 @media (max-width: 900px) {
   .admin-dashboard-content {
-    padding: 18px 4vw;
+    padding: 12px 2vw;
   }
   .admin-dashboard-cards {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 18px;
   }
   .chart-paper {
-    height: 320px;
-    padding: 18px 4vw 12px 4vw;
+    height: 260px;
+    padding: 12px 2vw 8px 2vw;
+    min-width: 0;
+    max-width: 100%;
   }
   .stat-card {
-    min-height: 140px !important;
-    height: 140px !important;
+    min-height: 80px !important;
+    height: 80px !important;
   }
 }
 
 @media (max-width: 600px) {
   .admin-dashboard-content {
-    padding: 8px 2vw;
-  }
-  .admin-dashboard-title {
-    font-size: 1.3rem;
+    padding: 4px 1vw;
   }
   .recent-projects-title,
   .chart-title {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   .stat-card {
-    min-height: 100px !important;
-    height: 100px !important;
-    font-size: 1rem !important;
-  }
-  .admin-dashboard-charts {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    min-height: 60px !important;
+    height: 60px !important;
+    font-size: 0.95rem !important;
   }
   .chart-paper {
-    height: 400px;
-    padding: 24px 12vw 12px 12vw;
+    height: 200px;
+    padding: 8px 1vw 4px 1vw;
   }
 }
