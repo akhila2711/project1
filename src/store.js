@@ -1,7 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import authReducer from './features/auth/authSlice';
-import reportReducer from './features/reports/reportSlice';
-import projectReducer from './features/projectSlice'; 
+import authReducer from './redux/slices/authSlice';
+import reportReducer from './redux/slices/reportSlice';
+import projectReducer from './redux/slices/projectSlice'; 
+
 
 
 const store = configureStore({
@@ -9,6 +10,8 @@ const store = configureStore({
     auth: authReducer,
     reports: reportReducer,
     projects: projectReducer,
+   
+    
   },
 });
 

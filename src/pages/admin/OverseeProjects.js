@@ -106,9 +106,10 @@ const OverseeProjects = () => {
                       </Box>
                     </TableCell>
                     <TableCell>
+                      {/* Show client name if object, else show as string or '-' */}
                       {project.client && typeof project.client === 'object'
                         ? project.client.name
-                        : '-'}
+                        : project.client || '-'}
                     </TableCell>
                     <TableCell>{project.location}</TableCell>
                     <TableCell>

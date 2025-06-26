@@ -12,6 +12,9 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 #root {
   min-height: 100vh;
@@ -35,3 +38,5 @@ body, #root {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+/* @tailwind directives removed because Tailwind CSS is not configured or not being used */

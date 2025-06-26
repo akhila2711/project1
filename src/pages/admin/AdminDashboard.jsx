@@ -77,7 +77,7 @@ const AdminDashboard = () => {
         letterSpacing: 1.5,
         boxShadow: '0 2px 12px rgba(44,62,80,0.07)'
       }}>
-        <span className="navbar-title" style={{ fontWeight: 800 }}>🏗️ Construction Site Progress Tracker</span>
+
         <span className="navbar-user" style={{ fontWeight: 500 }}>Welcome, Admin</span>
       </nav>
       <div className="admin-dashboard-flex">
@@ -88,26 +88,30 @@ const AdminDashboard = () => {
           <div className="admin-dashboard-cards">
             <Card className="stat-card stat-blue" elevation={0}>
               <CardContent>
-                <Typography className="stat-label"><strong>Total Users</strong></Typography>
+              
                 <Typography className="stat-value">{stats.users}</Typography>
+                  <Typography className="stat-label"><strong>Total Users</strong></Typography>
               </CardContent>
             </Card>
             <Card className="stat-card stat-teal" elevation={0}>
               <CardContent>
-                <Typography className="stat-label"><strong>Projects</strong></Typography>
                 <Typography className="stat-value">{stats.projects}</Typography>
+                <Typography className="stat-label"><strong>Projects</strong></Typography>
+                
               </CardContent>
             </Card>
             <Card className="stat-card stat-green" elevation={0}>
               <CardContent>
+                 <Typography className="stat-value">{stats.engineers}</Typography>
                 <Typography className="stat-label"><strong>Engineers</strong></Typography>
-                <Typography className="stat-value">{stats.engineers}</Typography>
+               
               </CardContent>
             </Card>
             <Card className="stat-card stat-purple" elevation={0}>
               <CardContent>
+                    <Typography className="stat-value">{stats.clients}</Typography>
                 <Typography className="stat-label"><strong>Clients</strong></Typography>
-                <Typography className="stat-value">{stats.clients}</Typography>
+            
               </CardContent>
             </Card>
           </div>
