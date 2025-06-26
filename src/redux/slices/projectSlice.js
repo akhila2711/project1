@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import api from '../api/axios'; // <-- use your custom axios instance
+import api from '../../api/axios';
 
 export const addNewProject = createAsyncThunk(
   'project/addNewProject',

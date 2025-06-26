@@ -13,7 +13,7 @@ import {
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { registerUser } from '../../features/auth/authSlice';
+import { registerUser } from '../../redux/slices/authSlice'
 import PersonIcon from '@mui/icons-material/Person';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';

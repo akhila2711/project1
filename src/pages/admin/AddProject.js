@@ -14,7 +14,6 @@ const AddProject = () => {
     location: '',
     startDate: '',
     endDate: '',
-    status: '',
     engineers: [],
     budget: '',
     description: '',
@@ -120,7 +119,6 @@ const AddProject = () => {
         location: '',
         startDate: '',
         endDate: '',
-        status: '',
         engineers: [],
         budget: '',
         description: '',
@@ -239,22 +237,6 @@ const AddProject = () => {
                 required
                 variant="outlined"
               />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                label="Status"
-                name="status"
-                value={formData.status}
-                onChange={handleChange}
-                fullWidth
-                required
-                select
-                variant="outlined"
-              >
-                <MenuItem value="Ongoing">Ongoing</MenuItem>
-                <MenuItem value="Completed">Completed</MenuItem>
-                <MenuItem value="Pending">Pending</MenuItem>
-              </TextField>
             </Grid>
             <Grid item xs={12}>
               <FormControl fullWidth required>

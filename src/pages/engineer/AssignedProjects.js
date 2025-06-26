@@ -1,4 +1,23 @@
 import React, { useEffect, useState } from 'react';
+import {
+  Box,
+  Typography,
+  Paper,
+  TextField,
+  MenuItem,
+  Chip,
+  Link,
+  Tooltip,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Avatar
+} from '@mui/material';
+import DescriptionIcon from '@mui/icons-material/Description';
+import ImageIcon from '@mui/icons-material/Image';
 import axios from '../../api/axios';
 
 const AssignedProjects = () => {
@@ -40,102 +59,158 @@ const AssignedProjects = () => {
   const isExternalUrl = url => /^https?:\/\//i.test(url);
 
   return (
-    <div style={{ padding: '40px' }}>
-      <h2>Assigned Projects</h2>
-      {error && <div style={{ color: 'red' }}>{error}</div>}
-
-      <div style={{ maxWidth: 300, marginBottom: 16 }}>
-        <label htmlFor="project-filter"><b>Filter by Project:</b></label>
-        <select
-          id="project-filter"
+    <Box
+      sx={{
+        maxWidth: 1200,
+        mx: 'auto',
+        mt: 6,
+        px: { xs: 1, md: 3 },
+        pb: 6,
+        minHeight: '100vh',
+        background: 'linear-gradient(120deg, #f8fdff 0%, #e3f0ff 100%)'
+      }}
+    >
+      <Typography
+        variant="h4"
+        fontWeight={700}
+        sx={{
+          mb: 3,
+          color: '#1976d2',
+          letterSpacing: 1,
+          textAlign: 'center'
+        }}
+      >
+        🏗️ Assigned Projects
+      </Typography>
+      <Box sx={{ mb: 3, maxWidth: 320, mx: 'auto' }}>
+        <TextField
+          select
+          label="Filter by Project"
           value={projectFilter}
           onChange={e => setProjectFilter(e.target.value)}
-          style={{ width: '100%', padding: 6, marginTop: 4 }}
+          fullWidth
+          size="small"
+          sx={{
+            background: '#fff',
+            borderRadius: 2,
+            boxShadow: 1
+          }}
         >
-          <option value="">All Projects</option>
+          <MenuItem value="">All Projects</MenuItem>
           {projectOptions.map((name, idx) => (
-            <option key={idx} value={name}>{name}</option>
+            <MenuItem key={idx} value={name}>{name}</MenuItem>
           ))}
-        </select>
-      </div>
-
-      <table border="1" cellPadding="8" cellSpacing="0" style={{ width: '100%', marginTop: '20px' }}>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Client</th>
-            <th>Location</th>
-            <th>Start Date</th>
-            <th>End Date</th>
-            <th>Status</th>
-            <th>Budget</th>
-            <th>Description</th>
-            <th>Document</th>
-            <th>Images</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredProjects.length === 0 ? (
-            <tr>
-              <td colSpan="10" style={{ textAlign: 'center' }}>No assigned projects found.</td>
-            </tr>
-          ) : (
-            filteredProjects.map(p => (
-              <tr key={p._id}>
-                <td>{p.name}</td>
-                <td>{p.client}</td>
-                <td>{p.location}</td>
-                <td>{p.startDate ? new Date(p.startDate).toLocaleDateString() : ''}</td>
-                <td>{p.endDate ? new Date(p.endDate).toLocaleDateString() : ''}</td>
-                <td>{p.status}</td>
-                <td>{p.budget}</td>
-                <td>{p.description}</td>
-                <td>
-  {p.documentUrl ? (
-    <a
-      href={
-        isExternalUrl(p.documentUrl)
-          ? p.documentUrl
-          : p.documentUrl.startsWith('uploads/')
-            ? `/${p.documentUrl.replace(/\\/g, '/')}`
-            : `/uploads/${p.documentUrl.replace(/\\/g, '/')}`
-      }
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      View
-    </a>
-  ) : (
-    '-'
-  )}
-</td>
-<td>
-  {p.imageUrls && p.imageUrls.length > 0
-    ? p.imageUrls.map((img, idx) => (
-        <a
-          key={idx}
-          href={
-            isExternalUrl(img)
-              ? img
-              : img.startsWith('uploads/')
-                ? `/${img.replace(/\\/g, '/')}`
-                : `/uploads/${img.replace(/\\/g, '/')}`
-          }
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ marginRight: 4 }}
-        >
-          Image {idx + 1}
-        </a>
-      ))
-    : '-'}
-</td>
-              </tr>
-            ))
-          )}
-        </tbody>
-      </table>
-    </div>
+        </TextField>
+      </Box>
+      {error && <Typography color="error" sx={{ textAlign: 'center', mb: 2 }}>{error}</Typography>}
+      {filteredProjects.length === 0 && !error && (
+        <Typography sx={{ textAlign: 'center', color: '#888', mt: 4 }}>No assigned projects found.</Typography>
+      )}
+      {filteredProjects.length > 0 && (
+        <TableContainer component={Paper} sx={{ borderRadius: 4, boxShadow: 3 }}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell><b>Project</b></TableCell>
+                <TableCell><b>Location</b></TableCell>
+                <TableCell><b>Client</b></TableCell>
+                <TableCell><b>Start Date</b></TableCell>
+                <TableCell><b>End Date</b></TableCell>
+                <TableCell><b>Budget</b></TableCell>
+                <TableCell><b>Description</b></TableCell>
+                <TableCell><b>Document</b></TableCell>
+                <TableCell><b>Images</b></TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {filteredProjects.map((p) => (
+                <TableRow key={p._id}>
+                  <TableCell>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                      <Avatar
+                        sx={{
+                          bgcolor: '#1976d2',
+                          color: '#fff',
+                          fontWeight: 700,
+                          width: 36,
+                          height: 36,
+                          fontSize: 18
+                        }}
+                      >
+                        {p.name?.[0]?.toUpperCase() || <ImageIcon />}
+                      </Avatar>
+                      <Typography fontWeight={700}>{p.name}</Typography>
+                    </Box>
+                  </TableCell>
+                  <TableCell>{p.location || '-'}</TableCell>
+                  <TableCell>
+                    {typeof p.client === 'object' ? p.client?.name : p.client || '-'}
+                  </TableCell>
+                  <TableCell>
+                    {p.startDate ? new Date(p.startDate).toLocaleDateString() : '-'}
+                  </TableCell>
+                  <TableCell>
+                    {p.endDate ? new Date(p.endDate).toLocaleDateString() : '-'}
+                  </TableCell>
+                  <TableCell>
+                    {p.budget ? `₹${p.budget}` : '-'}
+                  </TableCell>
+                  <TableCell sx={{ maxWidth: 200, whiteSpace: 'pre-line', wordBreak: 'break-word' }}>
+                    {p.description || '-'}
+                  </TableCell>
+                  <TableCell>
+                    {p.documentUrl ? (
+                      <Tooltip title="Document">
+                        <Link
+                          href={
+                            isExternalUrl(p.documentUrl)
+                              ? p.documentUrl
+                              : p.documentUrl.startsWith('uploads/')
+                                ? `/${p.documentUrl.replace(/\\/g, '/')}`
+                                : `/uploads/${p.documentUrl.replace(/\\/g, '/')}`
+                          }
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          sx={{ display: 'flex', alignItems: 'center', gap: 0.5, color: '#1976d2', fontWeight: 500 }}
+                        >
+                          <DescriptionIcon color="primary" />
+                          View
+                        </Link>
+                      </Tooltip>
+                    ) : (
+                      <Chip label="No Document" size="small" sx={{ bgcolor: '#eee' }} />
+                    )}
+                  </TableCell>
+                  <TableCell>
+                    {p.imageUrls && p.imageUrls.length > 0
+                      ? p.imageUrls.map((img, idx) => (
+                          <Tooltip title={`Image ${idx + 1}`} key={idx}>
+                            <Link
+                              href={
+                                isExternalUrl(img)
+                                  ? img
+                                  : img.startsWith('uploads/')
+                                    ? `/${img.replace(/\\/g, '/')}`
+                                    : `/uploads/${img.replace(/\\/g, '/')}`
+                              }
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, color: '#009688', fontWeight: 500, mr: 1 }}
+                            >
+                              <ImageIcon />
+                              {idx + 1}
+                            </Link>
+                          </Tooltip>
+                        ))
+                      : <Chip label="No Images" size="small" sx={{ bgcolor: '#eee' }} />}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      )}
+    </Box>
   );
 };
 
